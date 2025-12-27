@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shambhu Paudel | Chartered Accountant & Financial Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Light Theme Variables */
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #059669;
+            --accent: #7c3aed;
+            --light: #ffffff;
+            --light-gray: #f8fafc;
+            --gray: #94a3b8;
+            --dark-gray: #64748b;
+            --text: #334155;
+            --text-light: #475569;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light-gray);
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Header & Hero */
+        header {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 3rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%231e40af" fill-opacity="0.03" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"/></svg>');
+            background-size: cover;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .profile-icon img {
+            width: 100%;     
+            height: 100%;     
+            object-fit: cover; 
+        }
+        .profile-info h1 {
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .profile-title {
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .contact-item:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        .executive-summary {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            border-left: 4px solid var(--secondary);
+        }
+        .executive-summary h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .executive-summary h2 i {
+            color: var(--secondary);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Experience */
+        .experience-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-light), var(--accent));
+            border-radius: 3px;
+        }
+        .experience-item {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 3.5rem;
+        }
+        .experience-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 70px;
+            padding: 0.8rem 0.5rem;
+            background: var(--light);
+            color: var(--primary);
+            text-align: center;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary-light);
+        }
+        .experience-content {
+            background: var(--light);
+            padding: 2.2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+        .experience-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--secondary);
+        }
+        .experience-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .company {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .location {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .location i {
+            color: var(--secondary);
+        }
+        .experience-content ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .experience-content li {
+            margin-bottom: 0.7rem;
+            color: var(--text-light);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .skill-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        .skill-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .skill-card h3 i {
+            color: var(--secondary);
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .skill-tag {
+            background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+            color: var(--primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+        .skill-tag:hover {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Education & Certifications */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .info-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        .info-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .info-card .institution {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        /* Languages */
+        .languages-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .language-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+        }
+        .language-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        .language-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+        .language-level {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            padding: 0.3rem 1rem;
+            background: var(--light-gray);
+            border-radius: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            text-align: center;
+        }
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+        }
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .profile-info {
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 768px) {
+            .profile-info h1 {
+                font-size: 2.5rem;
+            }
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .experience-timeline::before {
+                left: 20px;
+            }
+            .experience-item {
+                padding-left: 60px;
+            }
+            .experience-date {
+                width: 50px;
+                font-size: 0.8rem;
+                padding: 0.6rem 0.3rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            .experience-content {
+                padding: 1.5rem;
+            }
+            .skill-card, .info-card {
+                padding: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Hero Section -->
+    <header>
+        <div class="container hero">
+            <div class="profile-header">
+                <div class="profile-icon">
+                    <img src="Images/shambhupaudel.jpg" alt="Shambhu Paudel">
+                </div>
+                <div class="profile-info">
+                    <h1>Shambhu Paudel</h1>
+                    <p class="profile-title">Chartered Accountant | Certified in Public Financial Management (PFM)</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i> Kathmandu, Bagmati, Nepal
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i> [Email]
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i> [Phone]
+                        </div>
+                        <a href="https://www.linkedin.com/in/shambhu-paudel-5748821a3/" target="_blank" class="contact-item">
+                            <i class="fab fa-linkedin"></i> LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="executive-summary">
+                <h2><i class="fas fa-chart-line"></i> Professional Summary</h2>
+                <p>A highly motivated Chartered Accountant with over 15 years of comprehensive experience in financial management, auditing, taxation, and corporate finance. Proven expertise in financial reporting under NAS and NFRS standards, statutory compliance, cost analysis, budgeting, and strategic financial planning. Experienced across diverse industries including manufacturing, trading, cement, steel, food products, and beverages. Adept at implementing accounting systems, managing financial operations, and providing strategic consultancy to optimize organizational performance.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Shambhu<span>Paudel</span></a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+                <p class="section-subtitle">15+ years of comprehensive financial leadership across diverse industries</p>
+            </div>
+            <div class="experience-timeline">
+                <!-- Proprietor -->
+                <div class="experience-item">
+                    <div class="experience-date">Sep 2024<br>Present</div>
+                    <div class="experience-content">
+                        <h3>Proprietor</h3>
+                        <span class="company">Shambhu Paudel & Associates</span>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</div>
+                        <ul>
+                            <li>Providing comprehensive accounting, auditing, and financial consultancy services</li>
+                            <li>Advising clients on tax planning, compliance, and corporate finance matters</li>
+                            <li>Managing firm operations and client relationships</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- AIMS Enterprises -->
+                <div class="experience-item">
+                    <div class="experience-date">Jun 2022<br>Sep 2024</div>
+                    <div class="experience-content">
+                        <h3>Chief Financial Officer</h3>
+                        <span class="company">AIMS Enterprises Pvt. Ltd.</span>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Pepsi-Cola, Kathmandu</div>
+                        <ul>
+                            <li>Oversaw complete financial operations and strategic financial planning</li>
+                            <li>Prepared financial statements in compliance with NAS and NFRS standards</li>
+                            <li>Managed statutory compliances including PF, TDS, VAT, and Excise</li>
+                            <li>Conducted financial analysis, budgeting, and variance reporting</li>
+                            <li>Provided regular MIS reports to senior management</li>
+                            <li>Liaised with statutory auditors and tax authorities</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Rungta Group -->
+                <div class="experience-item">
+                    <div class="experience-date">Aug 2015<br>Jan 2022</div>
+                    <div class="experience-content">
+                        <h3>Chief Financial Officer</h3>
+                        <span class="company">Rungta Group of Companies</span>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Thapathali, Kathmandu</div>
+                        <ul>
+                            <li>Responsible for financial management of 3 major manufacturing companies and trading entities</li>
+                            <li>Managed: Om Chao Biro Pellet Feed Industries Pvt. Ltd. (Poshak Dana brand), OCB Foods and Feed Pvt. Ltd. (Divya sunflower oil brand), Poshak Breeder Farm Pvt. Ltd.</li>
+                            <li>Systematized accounting procedures and financial statement finalization</li>
+                            <li>Ensured compliance with internal and external accounting requirements</li>
+                            <li>Managed cash flow, investments, and financial risk</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Chairperson -->
+                <div class="experience-item">
+                    <div class="experience-date">Jun 2014<br>Jan 2023</div>
+                    <div class="experience-content">
+                        <h3>Chairperson</h3>
+                        <span class="company">Purano Sinamangal Savings and Credit Cooperative Limited</span>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Pepsi-Cola, Kathmandu (Part-time)</div>
+                        <ul>
+                            <li>Provided strategic leadership and governance oversight</li>
+                            <li>Managed loan portfolio and recovery processes</li>
+                            <li>Ensured regulatory compliance and financial stability</li>
+                            <li>Oversaw cooperative financial operations and member services</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Head of Audit -->
+                <div class="experience-item">
+                    <div class="experience-date">Apr 2009<br>May 2014</div>
+                    <div class="experience-content">
+                        <h3>Head of Audit</h3>
+                        <span class="company">Subhash and Company</span>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Kathmandu (Internship)</div>
+                        <p><strong>Conducted external audits for diverse industries:</strong></p>
+                        <ul>
+                            <li><strong>Hardware Industries:</strong> 15+ cement and steel companies including Shivam Cement, Sonapur Cements, Ambe Steels, etc.</li>
+                            <li><strong>Textile Industries:</strong> Jagdamba Spinning Mills Pvt. Ltd.</li>
+                            <li><strong>Food Products:</strong> Saurav Food Products, Jagdamba Foods</li>
+                            <li><strong>Beverage Industries:</strong> Varun Beverage Nepal Pvt. Ltd.</li>
+                            <li><strong>Tobacco & Gutkha:</strong> Wizard Fragrance Udhyog, Shiv Shakti Food Products</li>
+                            <li><strong>Stationery:</strong> Papermat Pen Industries Pvt. Ltd.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-title">
+                <h2>Core Competencies</h2>
+                <p class="section-subtitle">Technical expertise and professional skills across financial domains</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3><i class="fas fa-chart-bar"></i> Financial Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Financial Reporting (NAS/NFRS)</span>
+                        <span class="skill-tag">Budgeting & Forecasting</span>
+                        <span class="skill-tag">Financial Analysis</span>
+                        <span class="skill-tag">Cash Flow Management</span>
+                        <span class="skill-tag">Investment Analysis</span>
+                        <span class="skill-tag">MIS Reporting</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-gavel"></i> Audit & Compliance</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">External & Internal Auditing</span>
+                        <span class="skill-tag">Statutory Compliance</span>
+                        <span class="skill-tag">System Controls</span>
+                        <span class="skill-tag">Risk Assessment</span>
+                        <span class="skill-tag">Legal Compliance</span>
+                        <span class="skill-tag">Process Improvement</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-file-invoice-dollar"></i> Taxation & Accounting</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tax Planning & Strategy</span>
+                        <span class="skill-tag">Tax Return Preparation</span>
+                        <span class="skill-tag">VAT Compliance</span>
+                        <span class="skill-tag">Company Law</span>
+                        <span class="skill-tag">Cost Accounting</span>
+                        <span class="skill-tag">Ledger Reconciliation</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tally Software</span>
+                        <span class="skill-tag">Swastik</span>
+                        <span class="skill-tag">Fact</span>
+                        <span class="skill-tag">Finpro</span>
+                        <span class="skill-tag">Synergy</span>
+                        <span class="skill-tag">MS Excel (Advanced)</span>
+                        <span class="skill-tag">MS Word</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-briefcase"></i> Corporate Finance</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Strategic Financial Planning</span>
+                        <span class="skill-tag">Corporate Finance Advisory</span>
+                        <span class="skill-tag">Loan Management</span>
+                        <span class="skill-tag">Financial System Implementation</span>
+                        <span class="skill-tag">Management Consultancy</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-industry"></i> Industry Knowledge</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Manufacturing</span>
+                        <span class="skill-tag">Trading</span>
+                        <span class="skill-tag">Cement Industry</span>
+                        <span class="skill-tag">Steel Industry</span>
+                        <span class="skill-tag">Food Products</span>
+                        <span class="skill-tag">Beverages</span>
+                        <span class="skill-tag">Textiles</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education">
+            <div class="section-title">
+                <h2>Education & Certifications</h2>
+                <p class="section-subtitle">Academic qualifications and professional certifications</p>
+            </div>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>Chartered Accountant</h3>
+                    <span class="institution">Institute of Chartered Accountants of Nepal</span>
+                    <p>Specialization in Accounting, Finance, Audit, and Taxation</p>
+                </div>
+                <div class="info-card">
+                    <h3>Certified in Public Financial Management (PFM)</h3>
+                    <span class="institution">Professional Certification</span>
+                    <p>Professional certification in public sector financial management</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section id="languages">
+            <div class="section-title">
+                <h2>Languages</h2>
+                <p class="section-subtitle">Language proficiency for professional communication</p>
+            </div>
+            <div class="languages-section">
+                <div class="language-item">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Professional Proficiency</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Nepali</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Hindi</span>
+                    <span class="language-level">Conversational</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-title">
+                <h2>Professional Value Offered</h2>
+                <p class="section-subtitle">Comprehensive financial services and expertise</p>
+            </div>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3><i class="fas fa-paper-plane"></i> Contact Information</h3>
+                    <p style="margin-bottom: 1.5rem;">Available for financial consultancy, auditing, and strategic planning services</p>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600;">
+                            <i class="fas fa-map-marker-alt"></i> Kathmandu, Bagmati, Nepal
+                        </div>
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600;">
+                            <i class="fas fa-envelope"></i> [Email from CV]
+                        </div>
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600;">
+                            <i class="fas fa-phone"></i> [Phone from CV]
+                        </div>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-handshake"></i> Services Offered</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem; margin-top: 1rem;">
+                        <li>Financial statement preparation (NAS/NFRS)</li>
+                        <li>External & internal audits</li>
+                        <li>Statutory compliance management</li>
+                        <li>Tax consultancy & planning</li>
+                        <li>Corporate finance advisory</li>
+                        <li>Budgeting & financial forecasting</li>
+                        <li>Management information systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Shambhu<span>Paudel</span></div>
+            <p>Chartered Accountant & Certified PFM Professional | Kathmandu, Nepal</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/shambhu-paudel-5748821a3/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:[Email]"><i class="fas fa-envelope"></i> Email</a>
+                <a href="tel:[Phone]"><i class="fas fa-phone"></i> Phone</a>
+            </div>
+            <p class="copyright">&copy; 2023 Shambhu Paudel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe experience items and skill cards
+        document.querySelectorAll('.experience-item, .skill-card, .info-card, .language-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
